@@ -6,4 +6,14 @@
 //  Copyright © 2020 Vladimir Rogozhkin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ResultViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .red
+        navigationItem.title = "Results"
+    }
+}
