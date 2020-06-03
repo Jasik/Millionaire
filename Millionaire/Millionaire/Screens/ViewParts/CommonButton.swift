@@ -10,11 +10,11 @@ import UIKit
 
 final class CommonButton: UIButton {
     
-    init(text: String, width: CGFloat = 90.0, height: CGFloat = 30.0, color: UIColor, radius: CGFloat = 8.0) {
+    init(text: String, width: CGFloat = 200.0, height: CGFloat = 50.0, color: UIColor, radius: CGFloat = 12.0, textColor: UIColor = .black) {
         super.init(frame: .zero)
         
         setupContstraints(width, height)
-        setupStyles(text, color, radius)
+        setupStyles(text, color: color, radius: radius, textColor: textColor)
     }
     
     required init?(coder: NSCoder) {
@@ -27,9 +27,10 @@ final class CommonButton: UIButton {
         self.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
     
-    private func setupStyles(_ text: String, _ color: UIColor, _ radius: CGFloat) {
+    private func setupStyles(_ text: String, color: UIColor, radius: CGFloat, textColor: UIColor) {
         backgroundColor = color
         setTitle(text, for: .normal)
+        setTitleColor(textColor, for: .normal)
         layer.cornerRadius = radius
     }
     
