@@ -11,16 +11,18 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private let resultButton: UIButton = {
-        let button = CommonButton(text: "Show Result", width: 200, height: 50, color: .gray, radius: 12)
+        let button = CommonButton(text: "Show Result", color: UIColor.btn_blue)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
-        button.titleLabel?.textColor = .white
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.border_gray.cgColor
         return button
     }()
     
     private let gameButton: UIButton = {
-        let button = CommonButton(text: "Play", width: 200, height: 50, color: .black, radius: 12)
+        let button = CommonButton(text: "Play", color: UIColor.btn_blue)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
-        button.titleLabel?.textColor = .black
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.border_gray.cgColor
         return button
     }()
     
@@ -31,6 +33,7 @@ class HomeViewController: UIViewController {
         navigationItem.title = "Millionaire Game"
         
         setupViews()
+        
         resultButton.addTarget(self, action: #selector(handleShowResult), for: .touchUpInside)
         gameButton.addTarget(self, action: #selector(handlePlay), for: .touchUpInside)
     }
