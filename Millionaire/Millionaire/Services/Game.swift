@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+final class Game {
+    
+    static let shared = Game()
+    
+    private var gameSession: GameSession?
+    
+    private init() {}
+}
