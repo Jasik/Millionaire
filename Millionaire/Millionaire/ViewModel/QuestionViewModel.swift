@@ -12,11 +12,13 @@ protocol Questions {
     
     var questions: [Question] { get }
     var questionNum: Int { get set }
+    var score: Int { get set }
     
     mutating func checkAnswer(_ answer: String) -> Bool
     func getQuestion() -> String
     func getAnswerOptionText(for index: Int) -> String
     mutating func nextQuestion()
+    func getMoneyCount(from score: Int) -> Int
 }
 
 struct QuestionViewModel: Questions {
@@ -45,9 +47,12 @@ struct QuestionViewModel: Questions {
     ]
     
     var questionNum: Int = 0
+    var score: Int = 0
     
     mutating func checkAnswer(_ answer: String) -> Bool {
         if questions[questionNum].answer == answer {
+            score += 1
+            
             return true
         } else {
             return false
@@ -67,6 +72,25 @@ struct QuestionViewModel: Questions {
             questionNum += 1
         } else {
             questionNum = 0
+        }
+    }
+    
+    func getMoneyCount(from score: Int) -> Int {
+        switch score {
+        case 0:
+            return 0
+        case 1:
+            return 10000
+        case 2:
+            return 100000
+        case 3:
+            return 200000
+        case 4:
+            return 500000
+        case 5:
+            return 1000000
+        default:
+            return 0
         }
     }
 }
