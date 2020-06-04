@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class GameSession {
+    
+    var questionCount: Int
+    var correctAnswers: Int
+    var money: Int
+    
+    init(questionCount: Int, correctAnswers: Int, money: Int) {
+        self.questionCount = questionCount
+        self.correctAnswers = correctAnswers
+        self.money = money
+    }
+}
