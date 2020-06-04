@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F44E8B3248871E700A72B44 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44E8B2248871E700A72B44 /* Game.swift */; };
+		9F44E8B5248871F500A72B44 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44E8B4248871F500A72B44 /* GameSession.swift */; };
 		9F56834B24868098003706CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56834A24868098003706CA /* AppDelegate.swift */; };
 		9F56834D24868098003706CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56834C24868098003706CA /* SceneDelegate.swift */; };
 		9F5683542486809A003706CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5683532486809A003706CA /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F44E8B2248871E700A72B44 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9F44E8B4248871F500A72B44 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		9F56834724868098003706CA /* Millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Millionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F56834A24868098003706CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F56834C24868098003706CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F44E8B12488719300A72B44 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F44E8B2248871E700A72B44 /* Game.swift */,
+				9F44E8B4248871F500A72B44 /* GameSession.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9F56833E24868098003706CA = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +104,7 @@
 		9F56834924868098003706CA /* Millionaire */ = {
 			isa = PBXGroup;
 			children = (
+				9F44E8B12488719300A72B44 /* Services */,
 				9FF1FE6E2487E2CA00EA08A5 /* ViewModel */,
 				9FF1FE6B2487D62E00EA08A5 /* Model */,
 				9FF1FE6124868AD800EA08A5 /* Extensions */,
@@ -303,9 +317,11 @@
 				9FF1FE6624868C7A00EA08A5 /* ResultViewController.swift in Sources */,
 				9FF1FE6D2487D63E00EA08A5 /* Question.swift in Sources */,
 				9F56834B24868098003706CA /* AppDelegate.swift in Sources */,
+				9F44E8B3248871E700A72B44 /* Game.swift in Sources */,
 				9FF1FE68248690D700EA08A5 /* GameViewController.swift in Sources */,
 				9F56834D24868098003706CA /* SceneDelegate.swift in Sources */,
 				9F5683702486830E003706CA /* HomeViewController.swift in Sources */,
+				9F44E8B5248871F500A72B44 /* GameSession.swift in Sources */,
 				9FF1FE6A2487D2AE00EA08A5 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
