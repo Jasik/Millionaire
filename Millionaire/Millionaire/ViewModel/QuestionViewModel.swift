@@ -46,6 +46,8 @@ struct QuestionViewModel: Questions {
             answer: "Норвегия")
     ]
     
+    let money = [0, 10000, 100000, 200000, 500000, 1000000]
+    
     var questionNum: Int = 0
     var score: Int = 0
     
@@ -76,21 +78,6 @@ struct QuestionViewModel: Questions {
     }
     
     func getMoneyCount(from score: Int) -> Int {
-        switch score {
-        case 0:
-            return 0
-        case 1:
-            return 10000
-        case 2:
-            return 100000
-        case 3:
-            return 200000
-        case 4:
-            return 500000
-        case 5:
-            return 1000000
-        default:
-            return 0
-        }
+        money[score]
     }
 }
