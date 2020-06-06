@@ -16,6 +16,9 @@
 		9F5683622486809A003706CA /* MillionaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5683612486809A003706CA /* MillionaireTests.swift */; };
 		9F5683702486830E003706CA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56836F2486830E003706CA /* HomeViewController.swift */; };
 		9F568372248683E4003706CA /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F568371248683E4003706CA /* MainNavigationController.swift */; };
+		9F9DD31E248BC8B40074EB10 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DD31D248BC8B40074EB10 /* Result.swift */; };
+		9F9DD322248BC8D10074EB10 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DD321248BC8D10074EB10 /* Date+Extension.swift */; };
+		9F9DD325248BC9020074EB10 /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DD324248BC9020074EB10 /* RecordsCaretaker.swift */; };
 		9FF1FE602486878E00EA08A5 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1FE5F2486878E00EA08A5 /* CommonButton.swift */; };
 		9FF1FE6624868C7A00EA08A5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1FE6524868C7A00EA08A5 /* ResultViewController.swift */; };
 		9FF1FE68248690D700EA08A5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1FE67248690D700EA08A5 /* GameViewController.swift */; };
@@ -48,6 +51,9 @@
 		9F5683632486809A003706CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F56836F2486830E003706CA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9F568371248683E4003706CA /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		9F9DD31D248BC8B40074EB10 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		9F9DD321248BC8D10074EB10 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		9F9DD324248BC9020074EB10 /* RecordsCaretaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
 		9FF1FE5F2486878E00EA08A5 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		9FF1FE6524868C7A00EA08A5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		9FF1FE67248690D700EA08A5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 		9F44E8B12488719300A72B44 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9F9DD324248BC9020074EB10 /* RecordsCaretaker.swift */,
 				9F44E8B2248871E700A72B44 /* Game.swift */,
 				9F44E8B4248871F500A72B44 /* GameSession.swift */,
 			);
@@ -155,6 +162,14 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
+		9F9DD323248BC8E20074EB10 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				9F9DD321248BC8D10074EB10 /* Date+Extension.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		9FF1FE5C248686FB00EA08A5 /* GameView */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +197,7 @@
 		9FF1FE6124868AD800EA08A5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9F9DD323248BC8E20074EB10 /* Foundation */,
 				9FF1FE6224868AED00EA08A5 /* UIKit */,
 			);
 			path = Extensions;
@@ -198,6 +214,7 @@
 		9FF1FE6B2487D62E00EA08A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F9DD31D248BC8B40074EB10 /* Result.swift */,
 				9FF1FE6C2487D63E00EA08A5 /* Question.swift */,
 			);
 			path = Model;
@@ -312,8 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F568372248683E4003706CA /* MainNavigationController.swift in Sources */,
+				9F9DD31E248BC8B40074EB10 /* Result.swift in Sources */,
 				9FF1FE602486878E00EA08A5 /* CommonButton.swift in Sources */,
 				9FF1FE702487E2E000EA08A5 /* QuestionViewModel.swift in Sources */,
+				9F9DD325248BC9020074EB10 /* RecordsCaretaker.swift in Sources */,
 				9FF1FE6624868C7A00EA08A5 /* ResultViewController.swift in Sources */,
 				9FF1FE6D2487D63E00EA08A5 /* Question.swift in Sources */,
 				9F56834B24868098003706CA /* AppDelegate.swift in Sources */,
@@ -321,6 +340,7 @@
 				9FF1FE68248690D700EA08A5 /* GameViewController.swift in Sources */,
 				9F56834D24868098003706CA /* SceneDelegate.swift in Sources */,
 				9F5683702486830E003706CA /* HomeViewController.swift in Sources */,
+				9F9DD322248BC8D10074EB10 /* Date+Extension.swift in Sources */,
 				9F44E8B5248871F500A72B44 /* GameSession.swift in Sources */,
 				9FF1FE6A2487D2AE00EA08A5 /* UIColor+Extension.swift in Sources */,
 			);
