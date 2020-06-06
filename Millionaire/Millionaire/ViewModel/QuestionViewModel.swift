@@ -18,7 +18,7 @@ protocol Questions {
     func getQuestion() -> String
     func getAnswerOptionText(for index: Int) -> String
     mutating func nextQuestion()
-    func getMoneyCount(from score: Int) -> Int
+    func getQuestionCount() -> Int
 }
 
 struct QuestionViewModel: Questions {
@@ -45,8 +45,6 @@ struct QuestionViewModel: Questions {
             answerOptions: ["Дания", "Норвегия", "Швеция", "Эстония"],
             answer: "Норвегия")
     ]
-    
-    let money = [0, 10000, 100000, 200000, 500000, 1000000]
     
     var questionNum: Int = 0
     var score: Int = 0
@@ -76,8 +74,8 @@ struct QuestionViewModel: Questions {
             questionNum = 0
         }
     }
-    
-    func getMoneyCount(from score: Int) -> Int {
-        money[score]
+
+    func getQuestionCount() -> Int {
+        questions.count
     }
 }
