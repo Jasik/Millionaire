@@ -10,13 +10,19 @@ import Foundation
 
 class GameSession {
     
-    var questionCount: Int
-    var correctAnswers: Int
-    var money: Int
+    weak var delegate: GameSessionDelegate?
     
-    init(questionCount: Int, correctAnswers: Int, money: Int) {
+    var questionCount: Int
+    var correctAnswers: Int {
+        get { return delegate?.scoreChanged(self) ?? 0}
+        set { }
+    }
+    var money: Int {
+        return moneyRank[correctAnswers]
+    }
+    let moneyRank = [0, 10000, 100000, 200000, 500000, 1000000]
+    
+    init(questionCount: Int){
         self.questionCount = questionCount
-        self.correctAnswers = correctAnswers
-        self.money = money
     }
 }
