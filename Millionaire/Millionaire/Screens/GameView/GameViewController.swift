@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol GameSessionDelegate: class {
+    func scoreChanged(_ gameSassion: GameSession) -> Int
+}
+
 class GameViewController: UIViewController {
     
-    private var viewModel = QuestionViewModel()
+    private var viewModel: QuestionViewModel
+    var gameSession: GameSession? 
     
     private let scoreLabel: UILabel = {
         let label = UILabel()
@@ -62,11 +67,23 @@ class GameViewController: UIViewController {
         return button
     }()
     
+    init(viewModel: QuestionViewModel, gameSession: GameSession) {
+        self.viewModel = viewModel
+        self.gameSession = gameSession
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         navigationItem.title = "Game"
+        
+        gameSession?.delegate = self
         
         self.setTextForInit()
         self.setupViews()
@@ -82,13 +99,17 @@ class GameViewController: UIViewController {
         if isCorrect {
             sender.backgroundColor = .green
             
-            viewModel.nextQuestion()
-            
+            if viewModel.score != viewModel.getQuestionCount() {
+                viewModel.nextQuestion()
+            } else {
+                Game.shared.finish()
+            }
             Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
                 self.setTextForInit(isReset: true)
             }
         } else {
             sender.backgroundColor = .red
+            Game.shared.finish()
         }
     }
 }
@@ -101,6 +122,7 @@ private extension GameViewController {
         
         scoreLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         scoreLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        scoreLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         
         view.addSubview(questionLabel)
         
@@ -121,6 +143,7 @@ private extension GameViewController {
     
     func setTextForInit(isReset: Bool = false) {
         
+        scoreLabel.text = "Correct Answer: \(viewModel.score)/\(viewModel.getQuestionCount())"
         questionLabel.text = viewModel.getQuestion()
         firstAnswerButton.setTitle(viewModel.getAnswerOptionText(for: 0), for: .normal)
         secondAnswerButton.setTitle(viewModel.getAnswerOptionText(for: 1), for: .normal)
@@ -141,5 +164,12 @@ private extension GameViewController {
         secondAnswerButton.addTarget(self, action: #selector(choseAnswer(_:)), for: .touchUpInside)
         thirdAnswerButton.addTarget(self, action: #selector(choseAnswer(_:)), for: .touchUpInside)
         fourhAnswerButton.addTarget(self, action: #selector(choseAnswer(_:)), for: .touchUpInside)
+    }
+}
+
+extension GameViewController: GameSessionDelegate {
+    
+    func scoreChanged(_ gameSassion: GameSession) -> Int {
+        return viewModel.score
     }
 }
