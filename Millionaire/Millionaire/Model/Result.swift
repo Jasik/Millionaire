@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct Result: Codable {
+    let date: Date
+    let prize: Int
+}
