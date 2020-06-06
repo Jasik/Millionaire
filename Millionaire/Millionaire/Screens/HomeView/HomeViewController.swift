@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private let gameSession: GameSession = GameSession(questionCount: 0)
+    private let game: Game = Game.shared
+    
     private let resultButton: UIButton = {
         let button = CommonButton(text: "Show Result", color: UIColor.btn_blue)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
@@ -51,12 +54,13 @@ class HomeViewController: UIViewController {
     
     @objc private func handleShowResult() {
         guard let navigationController = navigationController else { return }
-        navigationController.pushViewController(ResultViewController(), animated: true)
+        navigationController.pushViewController(ResultViewController(results: game.results), animated: true)
     }
     
     @objc private func handlePlay() {
         guard let navigationController = navigationController else { return }
-        navigationController.pushViewController(GameViewController(), animated: true)
+        game.start(gameSession)
+        navigationController.pushViewController(GameViewController(viewModel: QuestionViewModel.init(), gameSession: gameSession), animated: true)
     }
     
 }
